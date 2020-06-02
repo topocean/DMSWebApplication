@@ -1,0 +1,98 @@
+﻿body 
+{
+    font: 12px Arial;
+}
+
+#dropZone 
+{
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    background-image: url(Images/folder.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    width: 196px;
+    padding: 50px 0;
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+#dropZone.hover 
+{
+    border-color: #aaa;
+    background-color: #ddd;
+}
+
+#dropZone.error
+{
+    border-color: #f00;
+    background-image: url(Images/folder-disabled.png);
+}
+
+#dropZone1 
+{
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    background-image: url(Images/folder.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    width: 196px;
+    padding: 50px 0;
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+#dropZone1.hover 
+{
+    border-color: #aaa;
+    background-color: #ddd;
+}
+
+#dropZone1.error
+{
+    border-color: #f00;
+    background-image: url(Images/folder-disabled.png);
+}
+
+#progressZone {
+    padding-top: 15px;
+}
+
+#progressZone1 {
+    padding-top: 15px;
+}
+
+.fileName {
+    font-weight: bold;
+}
+
+.uploadError {
+    color: #f00;
+    font-style: italic;
+    padding-top: 3px;
+    padding-bottom: 10px;
+}
+
+.uploadProgress {
+    padding-top: 2px;
+    padding-bottom: 10px;
+}
+.barHolder {
+    background-color: #ccc;
+    height: 3px;
+    width: 200px;
+}
+.barError {
+    background-color: #f00;
+    height: 3px;
+    width: 200px;
+}
+.barFiller {
+    background-color: #20cc05;
+    height: 3px;
+}

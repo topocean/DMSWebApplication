@@ -1,0 +1,125 @@
+﻿body {
+    font-family: Arial Verdana;
+    font-size: 11px;
+    color: #333333;
+    text-shadow: 0.5px 0.5px 0.5px silver;
+    background: url(../images/program-bg.gif) repeat;
+    height: 100%;
+}
+
+.CompanyName
+{
+	font-family: Times New Roman;
+	font-style: italic;
+	vertical-align: middle;
+	font-size: 16pt;
+	font-weight: bold;
+}
+
+/* CSS Classes for Login Section Start */
+.Login
+{
+	border: solid 1px #40639d;
+	border-spacing: 0;
+	border-collapse: separate;
+}
+
+.LoginHdr
+{
+	font-family: Verdana, Tahoma;
+	font-size: 14px;
+	font-weight: bold;
+	vertical-align: middle;
+	text-align: center;
+	height: 20px;
+	background-color: #40639d;
+	color: White;
+}
+
+.LoginTitle
+{
+	font-family: Verdana, Tahoma;
+	font-size: 12px;
+    font-weight:400;
+    color:white;
+	width: 75px;
+	text-align: right;
+}
+
+.LoginCtrl
+{
+	vertical-align: middle;
+	text-align: left;
+	width: 120px;
+	height: 20px;
+}
+
+.LoginLine
+{
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #40639d;
+}
+/* CSS Classes for Login Section End */
+
+.input
+{
+	color:#3D3D3D;
+    background-color:white;
+    border-width:1px;
+    border-color:gray;
+    border-style:solid;
+    font-family: "Courier New", "Arial", "Helvetica", "sans-serif";
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.notice
+{
+	font-size: 10px;
+	font-weight: bold;
+	font-family: Verdana, Tahoma;
+	color: Red
+}
+
+.amo {
+    height: 100%;
+    border-radius: 5px;
+}
+
+    .amo .login {
+        margin: auto;
+    }
+
+        .amo .login th, .amo .login td {
+            padding: 2px;
+        }
+
+    .amo .logintitle {
+        color: White;
+        background-color: #6B696B;
+        font-weight: bold;
+        padding: 4px;
+        border-radius: 5px;
+        margin: auto;
+        width: 97%;
+        text-align: center;
+    }
+
+    .amo input[type='button'], .amo input[type='submit'], .amo inut[type='reset'] {
+        border-style: solid;
+        border-radius: 4px;
+    }
+
+    .amo input[type='text'], .amo input[type='password'] {
+        width: 150px;
+    }
+
+    .amo input[type='text']:focus, .amo input[type='password']:focus {
+        border-color: navy;
+    }
+
+    .amo input[type='button']:hover, .amo input[type='submit']:hover, .amo inut[type='reset']:hover {
+        border-color: darkred;
+        color: darkred;
+    }

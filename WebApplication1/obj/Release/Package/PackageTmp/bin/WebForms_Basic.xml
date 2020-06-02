@@ -1,0 +1,2345 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+WebApplication1
+</name>
+</assembly>
+<members>
+<member name="F:WebApplication1.Login._ErrorMessage">
+<summary>
+ErrorMessage 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login._FailureText">
+<summary>
+FailureText 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login._UserName">
+<summary>
+userName 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login._Password">
+<summary>
+password 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login._RememberMe">
+<summary>
+RememberMe 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login._RegisterHyperLink">
+<summary>
+RegisterHyperLink 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login._OpenAuthLogin">
+<summary>
+OpenAuthLogin 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Manage._SuccessMessagePlaceHolder">
+ <summary>
+ SuccessMessagePlaceHolder 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._setPassword">
+ <summary>
+ setPassword 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._password">
+ <summary>
+ 密碼控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._confirmPassword">
+ <summary>
+ confirmPassword 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._changePasswordHolder">
+ <summary>
+ changePasswordHolder 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._changePasswordUserName">
+ <summary>
+ changePasswordUserName 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._CurrentPasswordLabel">
+ <summary>
+ CurrentPasswordLabel 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._CurrentPassword">
+ <summary>
+ CurrentPassword 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._NewPasswordLabel">
+ <summary>
+ NewPasswordLabel 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._NewPassword">
+ <summary>
+ NewPassword 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._ConfirmNewPasswordLabel">
+ <summary>
+ ConfirmNewPasswordLabel 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.Manage._ConfirmNewPassword">
+ <summary>
+ ConfirmNewPassword 控制項。
+ </summary>
+ <remarks>
+ 自動產生的欄位。
+ 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
+ </remarks>
+</member>
+<member name="F:WebApplication1.OpenAuthProviders._providerDetails">
+<summary>
+providerDetails 控制。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Register._ErrorMessage">
+<summary>
+ErrorMessage 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Register._UserNameCtrl">
+<summary>
+UserNameCtrl 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Register._Password">
+<summary>
+password 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Register._ConfirmPassword">
+<summary>
+confirmPassword 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.RegisterExternalLogin._userName">
+<summary>
+userName 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1._Default._form1">
+<summary>
+form1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._txt_mblno">
+<summary>
+txt_mblno control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._txt_sblno">
+<summary>
+txt_sblno control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._txt_hblno">
+<summary>
+txt_hblno control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._txt_username">
+<summary>
+txt_username control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._dbginfo">
+<summary>
+dbginfo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._token">
+<summary>
+token control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._G1">
+<summary>
+G1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._btnD1">
+<summary>
+btnD1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._btnD2">
+<summary>
+btnD2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._btnD3">
+<summary>
+btnD3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._btnD4">
+<summary>
+btnD4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._txt_dmsuser">
+<summary>
+txt_dmsuser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._debugmsg">
+<summary>
+debugmsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._G2">
+<summary>
+G2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._ft1">
+<summary>
+ft1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._agt1">
+<summary>
+agt1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._updr1">
+<summary>
+updr1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._sts1">
+<summary>
+sts1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._ft2">
+<summary>
+ft2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._agt2">
+<summary>
+agt2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._updr2">
+<summary>
+updr2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._sts2">
+<summary>
+sts2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._ft3">
+<summary>
+ft3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._agt3">
+<summary>
+agt3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._updr3">
+<summary>
+updr3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._sts3">
+<summary>
+sts3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._ft4">
+<summary>
+ft4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._agt4">
+<summary>
+agt4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._updr4">
+<summary>
+updr4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._sts4">
+<summary>
+sts4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._ft5">
+<summary>
+ft5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._agt5">
+<summary>
+agt5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._updr5">
+<summary>
+updr5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._sts5">
+<summary>
+sts5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._bunUpload">
+<summary>
+bunUpload control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._bunRefresh">
+<summary>
+bunRefresh control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader01._postjs">
+<summary>
+postjs control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._parentDiv">
+<summary>
+parentDiv control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._lblMessage">
+<summary>
+lblMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._BtnHome">
+<summary>
+BtnHome control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._checktimeout">
+<summary>
+checktimeout control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_mbl">
+<summary>
+sch_mbl control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_inv">
+<summary>
+sch_inv control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_hbl">
+<summary>
+sch_hbl control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_vou">
+<summary>
+sch_vou control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_cnee">
+<summary>
+sch_cnee control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_fre">
+<summary>
+sch_fre control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_etd1">
+<summary>
+sch_etd1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_etd2">
+<summary>
+sch_etd2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_eta1">
+<summary>
+sch_eta1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_eta2">
+<summary>
+sch_eta2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_scac">
+<summary>
+sch_scac control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._DropDownListFType">
+<summary>
+DropDownListFType control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_vessel">
+<summary>
+sch_vessel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._sch_voyage">
+<summary>
+sch_voyage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._DropDownListYear">
+<summary>
+DropDownListYear control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._DropDownListWeek">
+<summary>
+DropDownListWeek control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._btnGo">
+<summary>
+btnGo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._btnReset">
+<summary>
+btnReset control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._btnD1">
+<summary>
+btnD1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._btnD2">
+<summary>
+btnD2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._btnD3">
+<summary>
+btnD3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._txt_inchis">
+<summary>
+txt_inchis control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._errmsg">
+<summary>
+errmsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._candownload">
+<summary>
+candownload control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._dbginfo">
+<summary>
+dbginfo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._token">
+<summary>
+token control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._G1">
+<summary>
+G1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._GridMessage">
+<summary>
+GridMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._txt_dmsuser">
+<summary>
+txt_dmsuser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader02._debugmsg">
+<summary>
+debugmsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._txt_customername">
+<summary>
+txt_customername control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dbginfo">
+<summary>
+dbginfo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._token">
+<summary>
+token control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._G1">
+<summary>
+G1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._btnD1">
+<summary>
+btnD1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._btnD2">
+<summary>
+btnD2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._btnD3">
+<summary>
+btnD3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._txt_dmsuser">
+<summary>
+txt_dmsuser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._debugmsg">
+<summary>
+debugmsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._G2">
+<summary>
+G2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._Button4">
+<summary>
+Button4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._Button5">
+<summary>
+Button5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._Button6">
+<summary>
+Button6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._displayflag">
+<summary>
+displayflag control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._ft1">
+<summary>
+ft1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._updrr1">
+<summary>
+updrr1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dp1">
+<summary>
+dp1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dpp1">
+<summary>
+dpp1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._ft2">
+<summary>
+ft2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._updrr2">
+<summary>
+updrr2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dp2">
+<summary>
+dp2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dpp2">
+<summary>
+dpp2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._ft3">
+<summary>
+ft3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._updrr3">
+<summary>
+updrr3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dp3">
+<summary>
+dp3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dpp3">
+<summary>
+dpp3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._ft4">
+<summary>
+ft4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._updrr4">
+<summary>
+updrr4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dp4">
+<summary>
+dp4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dpp4">
+<summary>
+dpp4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._ft5">
+<summary>
+ft5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._updrr5">
+<summary>
+updrr5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dp5">
+<summary>
+dp5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._dpp5">
+<summary>
+dpp5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._bunUpload">
+<summary>
+bunUpload control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._bunSendMail">
+<summary>
+bunSendMail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._bunRefresh">
+<summary>
+bunRefresh control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader03._postjs">
+<summary>
+postjs control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._txt_mblno">
+<summary>
+txt_mblno control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._txt_sblno">
+<summary>
+txt_sblno control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._txt_hblno">
+<summary>
+txt_hblno control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._txt_username">
+<summary>
+txt_username control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._dbginfo">
+<summary>
+dbginfo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._token">
+<summary>
+token control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._G1">
+<summary>
+G1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._btnD1">
+<summary>
+btnD1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._btnD2">
+<summary>
+btnD2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._btnD3">
+<summary>
+btnD3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._btnD4">
+<summary>
+btnD4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._txt_dmsuser">
+<summary>
+txt_dmsuser control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._debugmsg">
+<summary>
+debugmsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._G2">
+<summary>
+G2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._ft1">
+<summary>
+ft1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._supp1">
+<summary>
+supp1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._agt1">
+<summary>
+agt1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._updr1">
+<summary>
+updr1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._ft2">
+<summary>
+ft2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._agt2">
+<summary>
+agt2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._updr2">
+<summary>
+updr2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._sts2">
+<summary>
+sts2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._ft3">
+<summary>
+ft3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._agt3">
+<summary>
+agt3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._updr3">
+<summary>
+updr3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._sts3">
+<summary>
+sts3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._ft4">
+<summary>
+ft4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._agt4">
+<summary>
+agt4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._updr4">
+<summary>
+updr4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._sts4">
+<summary>
+sts4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._ft5">
+<summary>
+ft5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._agt5">
+<summary>
+agt5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._updr5">
+<summary>
+updr5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._sts5">
+<summary>
+sts5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._bunUpload">
+<summary>
+bunUpload control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._bunRefresh">
+<summary>
+bunRefresh control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader04._postjs">
+<summary>
+postjs control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._form1">
+<summary>
+form1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._txt_mblno">
+<summary>
+txt_mblno 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._txt_sblno">
+<summary>
+txt_sblno 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._txt_hblno">
+<summary>
+txt_hblno 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._txt_username">
+<summary>
+txt_username 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._dbginfo">
+<summary>
+dbginfo 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._token">
+<summary>
+token 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._G1">
+<summary>
+G1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._btnD1">
+<summary>
+btnD1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._btnD2">
+<summary>
+btnD2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._btnD3">
+<summary>
+btnD3 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._btnD4">
+<summary>
+btnD4 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._txt_dmsuser">
+<summary>
+txt_dmsuser 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._debugmsg">
+<summary>
+debugmsg 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._G2">
+<summary>
+G2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._ft1">
+<summary>
+ft1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._agt1">
+<summary>
+agt1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._updr1">
+<summary>
+updr1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._sts1">
+<summary>
+sts1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._ft2">
+<summary>
+ft2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._agt2">
+<summary>
+agt2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._updr2">
+<summary>
+updr2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._sts2">
+<summary>
+sts2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._ft3">
+<summary>
+ft3 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._agt3">
+<summary>
+agt3 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._updr3">
+<summary>
+updr3 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._sts3">
+<summary>
+sts3 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._ft4">
+<summary>
+ft4 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._agt4">
+<summary>
+agt4 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._updr4">
+<summary>
+updr4 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._sts4">
+<summary>
+sts4 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._ft5">
+<summary>
+ft5 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._agt5">
+<summary>
+agt5 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._updr5">
+<summary>
+updr5 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._sts5">
+<summary>
+sts5 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._bunUpload">
+<summary>
+bunUpload 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._bunRefresh">
+<summary>
+bunRefresh 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSDownloader05._postjs">
+<summary>
+postjs 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSService._form1">
+<summary>
+form1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSService._form2">
+<summary>
+form2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSService._args">
+<summary>
+args 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSService._btnDisp">
+<summary>
+btnDisp 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.DMSService._postjs">
+<summary>
+postjs 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login1._login">
+<summary>
+login 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login1._lblNotice">
+<summary>
+lblNotice 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login1._UserName">
+<summary>
+UserName 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login1._Password">
+<summary>
+Password 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Login1._LoginButton">
+<summary>
+LoginButton 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+</remarks>
+</member>
+<member name="T:WebApplication1.My.MyWebExtension">
+ <summary>
+ 用來定義可用於 Web 專案 My 命名空間中之屬性的模組。
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:WebApplication1.My.MyWebExtension.Computer">
+ <summary>
+ 傳回主機電腦的資訊。
+ </summary>
+</member>
+<member name="P:WebApplication1.My.MyWebExtension.User">
+ <summary>
+ 傳回目前 Web 使用者的資訊。
+ </summary>
+</member>
+<member name="P:WebApplication1.My.MyWebExtension.Request">
+ <summary>
+ 傳回要求物件。
+ </summary>
+</member>
+<member name="P:WebApplication1.My.MyWebExtension.Response">
+ <summary>
+ 傳回回應物件。
+ </summary>
+</member>
+<member name="P:WebApplication1.My.MyWebExtension.Log">
+ <summary>
+ 傳回 Asp 記錄物件。
+ </summary>
+</member>
+<member name="F:WebApplication1.SiteMaster._MainContent">
+<summary>
+MainContent 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._ft1">
+<summary>
+ft1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._agt1">
+<summary>
+agt1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._updr1">
+<summary>
+updr1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._sts1">
+<summary>
+sts1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._ft2">
+<summary>
+ft2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._agt2">
+<summary>
+agt2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._updr2">
+<summary>
+updr2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._sts2">
+<summary>
+sts2 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._ft3">
+<summary>
+ft3 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._agt3">
+<summary>
+agt3 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._updr3">
+<summary>
+updr3 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._sts3">
+<summary>
+sts3 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._ft4">
+<summary>
+ft4 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._agt4">
+<summary>
+agt4 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._updr4">
+<summary>
+updr4 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._sts4">
+<summary>
+sts4 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._ft5">
+<summary>
+ft5 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._agt5">
+<summary>
+agt5 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._updr5">
+<summary>
+updr5 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._sts5">
+<summary>
+sts5 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._bunUpload">
+<summary>
+bunUpload 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.TUploader._bunRefresh">
+<summary>
+bunRefresh 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.UpdateFileInfo._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.UpdateFileInfo._TextBox1">
+<summary>
+TextBox1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.UpdateFileInfoMarkCancel._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.Site_Mobile._Head1">
+<summary>
+Head1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Site_Mobile._HeadContent">
+<summary>
+HeadContent 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Site_Mobile._form1">
+<summary>
+form1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Site_Mobile._FeaturedContent">
+<summary>
+FeaturedContent 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Site_Mobile._MainContent">
+<summary>
+MainContent 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+<member name="F:WebApplication1.Site_Mobile._ViewSwitcher1">
+<summary>
+ViewSwitcher1 控制項。
+</summary>
+<remarks>
+自動產生的欄位。
+若要修改，請將欄位宣告從設計工具檔案移到程式碼後置 (Code-Behind) 檔案。
+</remarks>
+</member>
+</members>
+</doc>

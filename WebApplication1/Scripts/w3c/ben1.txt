@@ -1,0 +1,459 @@
+      # ----------------------------------------------------------------------------------
+      # Start: 3.1 - Voucher Total
+      # ----------------------------------------------------------------------------------
+
+      SELECT
+        @UID,
+        BkiDocRefId AS RefId,
+        ''summary-1'' AS Ln,
+        ''Set1'' AS SetType,
+        ''TO1'' AS Ledger,
+        0 AS Batch,
+        CONCAT(''PJ'', @vID) AS Voucher,
+        Period,
+        DATE_FORMAT(VouDate, ''%d/%m/%Y'') AS VoucherDte,
+        (CASE WHEN fun_GetVouDocNo(VohVouNo, IsVoid, BkiChgCurr, BkhLotNo) <> '''' THEN ''PURCHASES JOURNAL'' ELSE '' '' END) AS VouDesc,
+        (
+          CASE WHEN @BrhIE = ''I'' THEN
+            IFNULL((SELECT SupFXAccCd FROM ImportClient WHERE ClientRefId = BkiClientRefId), '''')
+          ELSE
+            IFNULL((SELECT SupFXAccCd FROM Client WHERE ClientRefId = BkiClientRefId), '''')
+          END
+        ) AS AccCode,
+        Ana1,
+        Ana2,
+        Ana3,
+        Ana4,
+				(CASE WHEN fun_GetAccPeriod_Report(BkhYear, BkhWeek) < @AccEndPer THEN @AccSeqNo ELSE '''' END) AS Ana5,
+        BkiChgCurr AS Currency,
+        (-1) * SUM(BkiChgDiffAmt) AS OrigAmt,
+        # Request by Mavis on 16/02/2015
+        #(-1) * SUM(ROUND(BkiChgDiffAmt * ROUND(fun_GetAccExRate(@BrhCd, @LocCurr, BkiChgCurr, BkhYear, BkhWeek), 4), 2)) AS EquvAmt,
+        (-1) * ROUND(SUM(BkiChgDiffAmt) * ROUND(fun_GetAccExRate(@BrhCd, @LocCurr, BkiChgCurr, BkhYear, BkhWeek), 4), 2) AS EquvAmt,
+        ROUND(fun_GetAccExRate(@BrhCd, @LocCurr, BkiChgCurr, BkhYear, BkhWeek), 6) AS ExRate,
+        ''P'' AS DocType,
+        fun_GetVouDocNo(VohVouNo, IsVoid, BkiChgCurr, BkhLotNo) AS DocuNo,
+        DATE_FORMAT(DocDate, ''%d/%m/%Y'') AS DocDte,
+        PayTerm,
+        DATE_FORMAT(DueDate, ''%d/%m/%Y'') AS DueDte,
+        Part1,
+        CONCAT((SELECT BkhMBLNo FROM BookingInfo WHERE BkhRefId = g.BkiBkgRefId), '' / '' , Part2) AS Part2,
+        Revise,
+        BkhWeek,
+        (SELECT VodExRate FROM VoucherDtl WHERE VodVohRefId = h.VohRefId AND VodCurr = BkiChgCurr Limit 1) AS NewExRate,
+        #BkiChgCurr AS NewCurr,
+        h.VohExCurr AS NewCurr,
+        ABS((-1) * ROUND(SUM(BkiChgDiffAmt) * (SELECT convert(VodExRate, decimal(18, 4)) FROM VoucherDtl WHERE VodVohRefId = h.VohrefId AND VodCurr = BkiChgCurr Limit 1), 2)) AS NewAmt,
+        (
+          CASE WHEN
+            (
+              fun_GetSumGL(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) >= 0
+              AND
+              fun_GetSumGLDiff(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) >= 0
+            )
+            OR
+            (
+              fun_GetSumGL(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) < 0
+              AND
+              fun_GetSumGLDiff(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) < 0
+            )
+          THEN
+            ''''
+          ELSE
+            fun_GetVouOpenItemNo(VohVouNo, BkiChgCurr)
+          END
+        ) AS OpenItemNo,
+        (
+          CASE WHEN fun_GetSumGL(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) = 0 THEN
+            0
+          ELSE
+            CASE WHEN
+              (
+                fun_GetSumGL(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) >= 0
+                AND
+                fun_GetSumGLDiff(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) >= 0
+              )
+              OR
+              (
+                fun_GetSumGL(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) < 0
+                AND
+                fun_GetSumGLDiff(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) < 0
+              )
+            THEN
+              0
+            ELSE
+              (-1) * fun_GetSumGLDiff(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period)
+            END
+          END
+        ) AS AppliedAmt
+      FROM
+        BookingItemGL g, VoucherHdr h
+      WHERE
+        h.VohVouNo = g.BkiDocNo
+        AND h.ClientRefId = g.BkiClientRefId
+        AND g.BkiBkgRefId = h.VohBkgRefId
+        AND h.VohBrhCd = @BrhCd
+        AND BkiBrhCd = VohBrhCd
+        AND IFNULL(VohVouNo, '''') <> ''''
+        AND g.IsPost = 0
+        AND g.IsVoid = 0
+        AND g.BkiChgDiffAmt <> 0
+        AND g.BkiGLType = ''VD''
+        AND (SELECT BkhLotNo FROM BookingInfo WHERE BkhRefId = VohBkgRefId) <> ''''
+        AND DATE_FORMAT((CASE WHEN VohLstUpd IS NULL THEN VohCreDte ELSE VohLstUpd END), ''%Y-%m-%d'') BETWEEN @DateFrm AND @DateTo
+        AND 1 = (
+          CASE WHEN @Revise = 1 THEN
+            (SELECT COUNT(*) FROM BookingItemGL a WHERE a.BkiDocNo = g.BkiDocNo AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) > 0
+          ELSE
+            (SELECT COUNT(*) FROM BookingItemGL a WHERE a.BkiDocNo = g.BkiDocNo AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) = 0
+          END
+        )
+        /*
+        AND 1 = (
+          CASE WHEN @Revise = 1 THEN
+            #(VohRevise > 0 OR VohVoid = 1)
+            (SELECT COUNT(*) FROM BookingItemGL WHERE BkiBkgRefId = VohBkgRefId AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) > 0
+          ELSE
+            #(VohRevise = 0 AND VohVoid = 0)
+            (SELECT COUNT(*) FROM BookingItemGL WHERE BkiBkgRefId = VohBkgRefId AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) = 0
+          END
+        )
+        */
+      GROUP BY
+        DocuNo, Period, BkiChgCurr
+
+      # ----------------------------------------------------------------------------------
+      # End: 3.1 - Voucher Total
+      # ----------------------------------------------------------------------------------
+
+      UNION
+
+      # ----------------------------------------------------------------------------------
+      # Start: 3.2 - Voucher Detail
+      # ----------------------------------------------------------------------------------
+
+      SELECT
+        @UID,
+        BkiDocRefId AS RefId,
+        CONVERT(
+          CONCAT(
+            ''1-'',
+            LPAD(BkiLn, 4, ''0'')
+          )
+          USING UTF8
+        ) AS Ln,
+        ''Set1'' AS SetType,
+        ''TO1'' AS Ledger,
+        0 AS Batch,
+        CONCAT(''PJ'', @vID) AS Voucher,
+        Period,
+        DATE_FORMAT(VouDate, ''%d/%m/%Y'') AS VoucherDte,
+        VouDesc,
+        /*(
+          CASE BkiItemCd
+            WHEN ''@VT'' THEN ''1700''
+            WHEN ''@AT'' THEN ''17001''
+            ELSE IFNULL((SELECT CosAccCd FROM Item WHERE ItemCd = BkiItemCd AND ItemBrhCd = @BrhCd), '''')
+          END
+        ) AS AccCode,*/
+        (
+          CASE BkiItemCd
+            WHEN ''@VT'' THEN ''1700''
+            WHEN ''@AT'' THEN ''17001''
+            ELSE
+              CASE WHEN fun_GetAccPeriod_Report(BkhYear, BkhWeek) < @AccEndPer THEN
+                CASE
+                  WHEN BkhYear < (@CutOffYear - 1) THEN ''5400''
+                  WHEN BkhYear = (@CutOffYear - 1) THEN (CASE WHEN @CutPrevYear = 1 THEN ''5400'' ELSE @AccCosCode END)
+                  ELSE @AccCosCode
+                END
+              ELSE
+                IFNULL((SELECT CosAccCd FROM Item WHERE ItemCd = BkiItemCd AND ItemBrhCd = @BrhCd), '''')
+              END  
+          END
+        ) AS AccCode,
+        Ana1,
+        Ana2,
+        Ana3,
+        Ana4,
+				(CASE WHEN fun_GetAccPeriod_Report(BkhYear, BkhWeek) < @AccEndPer THEN @AccSeqNo ELSE '''' END) AS Ana5,
+        BkiChgCurr AS Currency,
+        BkiChgDiffAmt AS OrigAmt,
+        ROUND(BkiChgDiffAmt *  ROUND(fun_GetAccExRate(@BrhCd, @LocCurr, BkiChgCurr, BkhYear, BkhWeek), 4), 2 ) AS EquvAmt,
+        ROUND(fun_GetAccExRate(@BrhCd, @LocCurr, BkiChgCurr, BkhYear, BkhWeek), 6) AS ExRate,
+        ''P'' AS DocType,
+        fun_GetVouDocNo(VohVouNo, IsVoid, BkiChgCurr, BkhLotNo) AS DocuNo,
+        DATE_FORMAT(DocDate, ''%d/%m/%Y'') AS DocDte,
+        PayTerm,
+        DATE_FORMAT(DueDate, ''%d/%m/%Y'') AS DueDte,
+        Part1,
+        CONCAT(BkiItemCd, '' / '', (SELECT BkhMBLNo FROM BookingInfo WHERE BkhRefId = g.BkiBkgRefId), '' / '', Part2) AS Part2,
+        Revise,
+        BkhWeek,
+        (SELECT VodExRate FROM VoucherDtl WHERE VodBkiRefId = BkiRefId AND VodVohRefId = VohRefId) AS NewExRate,
+        #(SELECT VodCurr FROM VoucherDtl WHERE VodBkiRefId = BkiRefId AND VodVohRefId = VohRefId) AS NewCurr,
+        h.VohExCurr AS NewCurr,
+        #(SELECT ROUND((convert(VodAmt, decimal(18,2)) * convert(VodExRate, decimal(18,4))), 2) FROM VoucherDtl WHERE VodBkiRefId = BkiRefId AND VodVohRefId = VohRefId) AS NewAmt,
+        ABS(ROUND(BkiChgDiffAmt * (SELECT convert(VodExRate, decimal(18, 4)) FROM VoucherDtl WHERE VodBkiRefId = BkiRefId AND VodVohRefId = VohRefId), 2)) AS NewAmt,
+        '''' AS OpenItemNo,
+        0 AS AppliedAmt
+      FROM
+        BookingItemGL g, VoucherHdr h
+      WHERE
+        h.VohVouNo = g.BkiDocNo
+        AND h.ClientRefId = g.BkiClientRefId
+        AND h.VohBrhCd = @BrhCd
+        AND BkiBrhCd = VohBrhCd
+        AND g.BkiBkgRefId = h.VohBkgRefId
+        AND IFNULL(VohVouNo, '''') <> ''''
+        AND g.IsPost = 0
+        AND g.IsVoid = 0
+        AND g.BkiChgDiffAmt <> 0
+        AND g.BkiGLType = ''VD''
+        AND (SELECT BkhLotNo FROM BookingInfo WHERE BkhRefId = VohBkgRefId) <> ''''
+        AND DATE_FORMAT((CASE WHEN VohLstUpd IS NULL THEN VohCreDte ELSE VohLstUpd END), ''%Y-%m-%d'') BETWEEN @DateFrm AND @DateTo
+        AND 1 = (
+          CASE WHEN @Revise = 1 THEN
+            (SELECT COUNT(*) FROM BookingItemGL a WHERE a.BkiDocNo = g.BkiDocNo AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) > 0
+          ELSE
+            (SELECT COUNT(*) FROM BookingItemGL a WHERE a.BkiDocNo = g.BkiDocNo AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) = 0
+          END
+        )
+        /*
+        AND 1 = (
+          CASE WHEN @Revise = 1 THEN
+            #(VohRevise > 0 OR VohVoid = 1)
+            (SELECT COUNT(*) FROM BookingItemGL WHERE BkiBkgRefId = VohBkgRefId AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) > 0
+          ELSE
+            #(VohRevise = 0 AND VohVoid = 0)
+            (SELECT COUNT(*) FROM BookingItemGL WHERE BkiBkgRefId = VohBkgRefId AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) = 0
+          END
+        )
+        */
+
+      # ----------------------------------------------------------------------------------
+      # End: 3.2 - Voucher Detail
+      # ----------------------------------------------------------------------------------
+
+      UNION
+      
+      
+      UNION
+
+      # ----------------------------------------------------------------------------------
+      # Start: 3.5 - Voided Voucher Total (VohLastVouNo)
+      # ----------------------------------------------------------------------------------
+
+      SELECT
+        @UID,
+        BkiDocRefId AS RefId,
+        CONVERT(''summary-2'' USING UTF8) AS Ln,
+        ''Set1'' AS SetType,
+        ''TO1'' AS Ledger,
+        0 AS Batch,
+        CONCAT(''PJ'', @vID) AS Voucher,
+        Period,
+        DATE_FORMAT(VouDate, ''%d/%m/%Y'') AS VoucherDte,
+        VouDesc,
+        (
+          CASE WHEN @BrhIE = ''I'' THEN
+            IFNULL((SELECT SupFXAccCd FROM ImportClient WHERE ClientRefId = BkiClientRefId), '''')
+          ELSE
+            IFNULL((SELECT SupFXAccCd FROM Client WHERE ClientRefId = BkiClientRefId), '''')
+          END
+        ) AS AccCode,
+        Ana1,
+        Ana2,
+        Ana3,
+        Ana4,
+				(CASE WHEN fun_GetAccPeriod_Report(BkhYear, BkhWeek) < @AccEndPer THEN @AccSeqNo ELSE '''' END) AS Ana5,
+        BkiChgCurr AS Currency,
+        (-1) * SUM(BkiChgDiffAmt) AS OrigAmt,
+        # Request by Mavis on 16/02/2015
+        #(-1) * SUM(ROUND(BkiChgDiffAmt * ROUND(fun_GetAccExRate(@BrhCd, @LocCurr, BkiChgCurr, BkhYear, BkhWeek), 4), 2)) AS EquvAmt,
+        (-1) * ROUND(SUM(BkiChgDiffAmt) * ROUND(fun_GetAccExRate(@BrhCd, @LocCurr, BkiChgCurr, BkhYear, BkhWeek), 4), 2) AS EquvAmt,
+        ROUND(fun_GetAccExRate(@BrhCd, @LocCurr, BkiChgCurr, BkhYear, BkhWeek), 6) AS ExRate,
+        ''P'' AS DocType,
+        fun_GetVouDocNo(VohLastVouNo, IsVoid, BkiChgCurr, BkhLotNo) AS DocuNo,
+        DATE_FORMAT(DocDate, ''%d/%m/%Y'') AS DocDate,
+        PayTerm,
+        DATE_FORMAT(DueDate, ''%d/%m/%Y'') AS DueDate,
+        CONCAT(Part1, (CASE WHEN VohVoid = 1 THEN '' (CANCEL)'' ELSE '''' END)) AS Part1,
+        CONCAT((SELECT BkhMBLNo FROM BookingInfo WHERE BkhRefId = g.BkiBkgRefId), '' / '', Part2) AS Part2,
+        Revise,
+        BkhWeek,
+        (SELECT VodExRate FROM VoucherDtl WHERE VodVohRefId = h.VohrefId AND VodCurr = BkiChgCurr Limit 1) AS NewExRate,
+        #BkiChgCurr AS NewCurr,
+        h.VohExCurr AS NewCurr,
+        ABS((-1) * ROUND(SUM(BkiChgDiffAmt) * (SELECT convert(VodExRate, decimal(18,4)) FROM VoucherDtl WHERE VodVohRefId = h.VohrefId AND VodCurr = BkiChgCurr Limit 1), 2)) AS NewAmt,
+        (
+          CASE WHEN
+            (
+              fun_GetSumGL(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) >= 0
+              AND
+              fun_GetSumGLDiff(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) >= 0
+            )
+            OR
+            (
+              fun_GetSumGL(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) < 0
+              AND
+              fun_GetSumGLDiff(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) < 0
+            )
+          THEN
+            ''''
+          ELSE
+            fun_GetVouOpenItemNo(VohLastVouNo, BkiChgCurr)
+          END
+        ) AS OpenItemNo,
+        (
+          CASE WHEN fun_GetSumGL(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) = 0 THEN
+            0
+          ELSE
+            CASE WHEN
+              (
+                fun_GetSumGL(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) >= 0
+                AND
+                fun_GetSumGLDiff(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) >= 0
+              )
+              OR
+              (
+                fun_GetSumGL(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) < 0
+                AND
+                fun_GetSumGLDiff(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period) < 0
+              )
+            THEN
+              0
+            ELSE
+              (-1) * fun_GetSumGLDiff(@BrhIE, 2, BkiDocNo, BkiChgCurr, IsVoid, IsPost, BkiClientRefId, Period)
+            END
+          END
+        ) AS AppliedAmt
+      FROM
+        BookingItemGL g, VoucherHdr h
+      WHERE
+        h.VohLastVouNo = g.BkiDocNo
+        #AND h.ClientRefId = g.BkiClientRefId
+        AND h.VohBrhCd = @BrhCd
+        AND BkiBrhCd = VohBrhCd
+        AND g.BkiBkgRefId = h.VohBkgRefId
+        AND g.BkiDocRefId = h.VohRefId
+        AND IFNULL(VohLastVouNo, '''') <> ''''
+        AND g.IsPost = 0
+        AND g.IsVoid = 1
+        AND g.BkiChgDiffAmt <> 0
+        AND g.BkiGLType = ''VD''
+        AND (SELECT BkhLotNo FROM BookingInfo WHERE BkhRefId = VohBkgRefId) <> ''''
+        AND DATE_FORMAT((CASE WHEN VohLstUpd IS NULL THEN VohCreDte ELSE VohLstUpd END), ''%Y-%m-%d'') BETWEEN @DateFrm AND @DateTo
+        AND 1 = (
+          CASE WHEN @Revise = 1 THEN
+            (SELECT COUNT(*) FROM BookingItemGL a WHERE a.BkiDocNo = g.BkiDocNo AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) > 0
+          ELSE
+            (SELECT COUNT(*) FROM BookingItemGL a WHERE a.BkiDocNo = g.BkiDocNo AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) = 0
+          END
+        )
+      GROUP BY
+        DocuNo, Period, BkiChgCurr
+
+      # ----------------------------------------------------------------------------------
+      # End: 3.5 - Voided Voucher Total (VohLastVouNo)
+      # ----------------------------------------------------------------------------------
+
+      UNION
+
+      # ----------------------------------------------------------------------------------
+      # Start: 3.6 - Voided Voucher Detail
+      # ----------------------------------------------------------------------------------
+
+      SELECT
+        @UID,
+        BkiDocRefId AS RefId,
+        CONVERT(
+          CONCAT(
+            ''2-'',
+            LPAD(BkiLn, 4, ''0'')
+          )
+          USING UTF8
+        ) AS Ln,
+        ''Set1'' AS SetType,
+        ''TO1'' AS Ledger,
+        0 AS Batch,
+        CONCAT(''PJ'', @vID) AS Voucher,
+        Period,
+        DATE_FORMAT(VouDate, ''%d/%m/%Y'') AS VoucherDte,
+        VouDesc,
+        /*(
+          CASE BkiItemCd
+            WHEN ''@VT'' THEN ''1700''
+            WHEN ''@AT'' THEN ''17001''
+            ELSE IFNULL((SELECT CosAccCd FROM Item WHERE ItemCd = BkiItemCd AND ItemBrhCd = @BrhCd), '''')
+          END
+        ) AS AccCode,*/
+        (
+          CASE BkiItemCd
+            WHEN ''@VT'' THEN ''1700''
+            WHEN ''@AT'' THEN ''17001''
+            ELSE
+              CASE WHEN fun_GetAccPeriod_Report(BkhYear, BkhWeek) < @AccEndPer THEN
+                CASE
+                  WHEN BkhYear < (@CutOffYear - 1) THEN ''5400''
+                  WHEN BkhYear = (@CutOffYear - 1) THEN (CASE WHEN @CutPrevYear = 1 THEN ''5400'' ELSE @AccCosCode END)
+                  ELSE @AccCosCode
+                END
+              ELSE
+                IFNULL((SELECT CosAccCd FROM Item WHERE ItemCd = BkiItemCd AND ItemBrhCd = @BrhCd), '''')
+              END  
+          END
+        ) AS AccCode,
+        Ana1,
+        Ana2,
+        Ana3,
+        Ana4,
+				(CASE WHEN fun_GetAccPeriod_Report(BkhYear, BkhWeek) < @AccEndPer THEN @AccSeqNo ELSE '''' END) AS Ana5,
+        BkiChgCurr AS Currency,
+        BkiChgDiffAmt AS OrigAmt,
+        ROUND(BkiChgDiffAmt *  ROUND(fun_GetAccExRate(@BrhCd, @LocCurr, BkiChgCurr, BkhYear, BkhWeek), 4), 2) AS EquvAmt,
+        ROUND(fun_GetAccExRate(@BrhCd, @LocCurr, BkiChgCurr, BkhYear, BkhWeek), 6) AS ExRate,
+        ''P'' AS DocType,
+        fun_GetVouDocNo(VohLastVouNo, IsVoid, BkiChgCurr, BkhLotNo) AS DocuNo,
+        DATE_FORMAT(DocDate, ''%d/%m/%Y'') AS DocDate,
+        PayTerm,
+        DATE_FORMAT(DueDate, ''%d/%m/%Y'') AS DueDate,
+        CONCAT(Part1, (CASE WHEN VohVoid = 1 THEN '' (CANCEL)'' ELSE '''' END)) AS Part1,
+        CONCAT(BkiItemCd, '' / '', (SELECT BkhMBLNo FROM BookingInfo WHERE BkhRefId = g.BkiBkgRefId), '' / '', Part2) AS Part2,
+        Revise,
+        BkhWeek,
+        (SELECT VodExRate FROM VoucherDtl WHERE VodBkiRefId = BkiRefId AND VodVohRefId = VohRefId) AS NewExRate,
+        #(SELECT VodCurr FROM VoucherDtl WHERE VodBkiRefId = BkiRefId AND VodVohRefId = VohRefId) AS NewCurr,
+        h.VohExCurr AS NewCurr,
+        #(SELECT ROUND((convert(VodAmt, decimal(18,2)) * convert(VodExRate, decimal(18,4))), 2) FROM VoucherDtl WHERE VodBkiRefId = BkiRefId AND VodVohRefId = VohRefId) AS NewAmt,
+        ABS(ROUND(BkiChgDiffAmt * (SELECT convert(VodExRate, decimal(18, 4)) FROM VoucherDtl WHERE VodBkiRefId = BkiRefId AND VodVohRefId = VohRefId), 2)) AS NewAmt,
+        '''' AS OpenItemNo,
+        0 AS AppliedAmt
+      FROM
+        BookingItemGL g, VoucherHdr h
+      WHERE
+        h.VohLastVouNo = g.BkiDocNo
+        #AND h.ClientRefId = g.BkiClientRefId
+        AND h.VohBrhCd = @BrhCd
+        AND BkiBrhCd = VohBrhCd
+        AND g.BkiBkgRefId = h.VohBkgRefId
+        AND g.BkiDocRefId = h.VohRefId
+        AND IFNULL(VohLastVouNo, '''') <> ''''
+        AND g.IsPost = 0
+        AND g.IsVoid = 1
+        AND g.BkiChgDiffAmt <> 0
+        AND g.BkiGLType = ''VD''
+        AND (SELECT BkhLotNo FROM BookingInfo WHERE BkhRefId = VohBkgRefId) <> ''''
+        AND DATE_FORMAT((CASE WHEN VohLstUpd IS NULL THEN VohCreDte ELSE VohLstUpd END), ''%Y-%m-%d'') BETWEEN @DateFrm AND @DateTo
+        AND 1 = (
+          CASE WHEN @Revise = 1 THEN
+            (SELECT COUNT(*) FROM BookingItemGL a WHERE a.BkiDocNo = g.BkiDocNo AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) > 0
+          ELSE
+            (SELECT COUNT(*) FROM BookingItemGL a WHERE a.BkiDocNo = g.BkiDocNo AND BkiGLType = ''VD'' AND BkiChgGLAmt <> 0 AND BkiBrhCd = @BrhCd) = 0
+          END
+        )
+
+      # ----------------------------------------------------------------------------------
+      # End: 3.6 - Voided Voucher Detail (VohLastVouNo)
+      # ----------------------------------------------------------------------------------
+      
